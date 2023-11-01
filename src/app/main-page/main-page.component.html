@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="menu">
+  <img src="./assets/image.png" alt="Description of the image" class="myimage">
+  <span class="spn">Picture Perfect</span>
+  <button class="upload-button" (click)="onFileInput.click()">
+  <i class="pi pi-upload" style="font-size: 1rem; margin-right: 5px;"></i> Upload
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" style="display: none;" #onFileInput />
+  </button>
+  </div> 
+  
+  <div class="gallery">
+    <div class="image" *ngFor="let image of images">
+      <img [src]="image.src" [alt]="image.alt" [class.selected]="image.selected" (click)="toggleImageSelection(image)" />
+      <i class="pi pi-trash" style="color: slateblue" *ngIf="image.selected" (click)="deleteSelectedImages()"></i>
+      <i class="pi pi-download" style="color: slateblue; cursor: pointer;" *ngIf="image.selected" (click)="downloadImage(image)"></i>
+      <i class="pi pi-file-edit" style="color: slateblue; cursor: pointer;" *ngIf="image.selected" (click)="editImage(image.src)"></i>
+
+    </div>
+  </div>
+
+</div>
+
+
