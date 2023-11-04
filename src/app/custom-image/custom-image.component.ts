@@ -19,7 +19,7 @@ export class CustomImageComponent implements OnInit {
   inZoomMode: boolean = false;
   imgResultBeforeCompression: string = this.imageUrl;
   imgResultAfterCompression: string = '';
-
+  inCompressMode: boolean = false;
   constructor(private route: ActivatedRoute,private imageCompress: NgxImageCompressService)  { }
 
   ngOnInit(): void {
@@ -42,10 +42,19 @@ export class CustomImageComponent implements OnInit {
     imgFailed () {}
     toggleCropMode() {
       this.inCropMode = !this.inCropMode;
+      if (this.inZoomMode=true) {
+        this.inZoomMode = !this.inZoomMode;
+      }
+      
+
     }
     toggleZoomMode() {
       
       this.inZoomMode = !this.inZoomMode;
+      if (this.inCropMode=true) {
+        this.inCropMode = !this.inCropMode;
+      }
+      
     }
     compressFile() {
       

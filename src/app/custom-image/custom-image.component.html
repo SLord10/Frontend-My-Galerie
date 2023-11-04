@@ -1,4 +1,4 @@
-<div >
+
   <div class="menu">
     <img src="./assets/image.png" alt="Description of the image" class="myimage">
     <span class="spn">Picture Perfect</span>
@@ -6,8 +6,8 @@
     <i class="pi pi-check" style="font-size: 1rem; margin-right: 5px;"></i> Save changes
     </button>
   </div>
-  <div class="content">
-  <div class="sidebar">
+  <div class="content" style="display: flex;">
+  <div class="sidebar" >
     <button (click)="toggleCropMode()">
       <i class="pi pi-pencil" style="font-size: 1rem; margin-right: 5px;"></i>Crop
     </button>
@@ -25,26 +25,13 @@
       <i class="pi pi-refresh" style="font-size: 1rem; margin-right: 5px;"></i>Rotate Right
     </button>
     </div>
-    <div class="gallery">
+    <div class="gallery" >
 
-  <img [src]="imgResultAfterCompression" *ngIf="imgResultAfterCompression" />
+      <div style="justify-content: center;">
 
-      
-      <lib-ngx-image-zoom class="ngxImageZoomContainer"
-      [thumbImage]="galleryImageUrl"
-      [magnification]="8"
-      [enableScrollZoom]="true"
-      [enableLens]="true"
-      [lensWidth]="100"
-      [lensHeight]="100"
-      [circularLens]="true"
-      *ngIf="inZoomMode"
-      ></lib-ngx-image-zoom>
-
-      <img [src]=galleryImageUrl alt="Description of the image" class="image" *ngIf="!inCropMode && !inZoomMode">
-           
-      
-      <image-cropper class="image"
+        <img [src]=galleryImageUrl alt="Description of the image" class="image" *ngIf="!inCropMode && !inZoomMode">
+      <div style="display: block; height: 300px;"> 
+      <image-cropper 
         [imageURL]="galleryImageUrl"
         [maintainAspectRatio]="true"
         format="png"
@@ -54,17 +41,37 @@
         (loadImageFailed)="imgFailed()"
         *ngIf="inCropMode && !inZoomMode"
       ></image-cropper>
+      </div> 
+      <br>
+      <br>
+       <img class="image" [src]="cropImgPreview" *ngIf="inCropMode" />
+
+      </div>
+
+  <img [src]="imgResultAfterCompression" *ngIf="imgResultAfterCompression" />
+
+      
+      <lib-ngx-image-zoom 
+      [thumbImage]="galleryImageUrl"
+      [magnification]="1"
+      [enableScrollZoom]="true"
+      [enableLens]="true"
+      [lensWidth]="100"
+      [lensHeight]="100"
+      [circularLens]="true"
+      *ngIf="inZoomMode"
+      ></lib-ngx-image-zoom>
+
+      
     </div>
     <div>
 
 
-<img [src]="cropImgPreview" *ngIf="inCropMode" />
     </div>
     
   </div>  
   
   
-  </div>
 
  
   
