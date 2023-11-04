@@ -1,4 +1,4 @@
-<div class="container">
+<div >
   <div class="menu">
     <img src="./assets/image.png" alt="Description of the image" class="myimage">
     <span class="spn">Picture Perfect</span>
@@ -27,19 +27,18 @@
     </div>
     <div class="gallery">
 
-      
   <img [src]="imgResultAfterCompression" *ngIf="imgResultAfterCompression" />
 
       
-      <lib-ngx-image-zoom class="image"
+      <lib-ngx-image-zoom class="ngxImageZoomContainer"
       [thumbImage]="galleryImageUrl"
-      [magnification]="10"
+      [magnification]="8"
       [enableScrollZoom]="true"
       [enableLens]="true"
       [lensWidth]="100"
       [lensHeight]="100"
       [circularLens]="true"
-      *ngIf="inZoomMode && !inCropMode"
+      *ngIf="inZoomMode"
       ></lib-ngx-image-zoom>
 
       <img [src]=galleryImageUrl alt="Description of the image" class="image" *ngIf="!inCropMode && !inZoomMode">
@@ -48,7 +47,6 @@
       <image-cropper class="image"
         [imageURL]="galleryImageUrl"
         [maintainAspectRatio]="true"
-        
         format="png"
         (imageCropped)="cropImg($event)"
         (imageLoaded)="imgLoad()"

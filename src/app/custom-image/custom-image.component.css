@@ -110,4 +110,12 @@
     font-size: 25px;
     transform: translateY(70%);
   }
+ 
+  .ngxImageZoomContainer[_ngcontent-ng-c3345660003] {
+    /* Your styles for ngxImageZoomContainer here */
+    width: 300px;
+    height: 200px;
+    /* Add other styles as needed */
+  }
   
+

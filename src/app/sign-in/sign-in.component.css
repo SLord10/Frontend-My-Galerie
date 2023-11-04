@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .sign-in-container {
     background-color: #ffffff;
     padding: 40px;

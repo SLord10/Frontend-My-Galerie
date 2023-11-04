@@ -76,3 +76,7 @@
   font-size: 25px;
   transform: translateY(70%);
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
