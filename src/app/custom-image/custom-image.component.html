@@ -41,16 +41,35 @@
         (loadImageFailed)="imgFailed()"
         *ngIf="inCropMode && !inZoomMode"
       ></image-cropper>
+      <br>
+      <br>
+
+      <div style="display: block; height: 300px;">
+        <img class="image" [src]="imgResultAfterCompression" *ngIf="imgResultAfterCompression && inCompressMode" />
+      </div>
+
       </div> 
       <br>
       <br>
        <img class="image" [src]="cropImgPreview" *ngIf="inCropMode" />
+       <br><br>
+
+
+
+       
+
+
+       <button class="button-5" *ngIf="inCropMode">
+        Save
+      </button>
+      <button class="button-5" *ngIf="inCompressMode">
+        Save
+      </button>
 
       </div>
-
-  <img [src]="imgResultAfterCompression" *ngIf="imgResultAfterCompression" />
-
       
+
+
       <lib-ngx-image-zoom 
       [thumbImage]="galleryImageUrl"
       [magnification]="1"

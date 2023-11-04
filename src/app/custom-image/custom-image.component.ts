@@ -20,6 +20,7 @@ export class CustomImageComponent implements OnInit {
   imgResultBeforeCompression: string = this.imageUrl;
   imgResultAfterCompression: string = '';
   inCompressMode: boolean = false;
+
   constructor(private route: ActivatedRoute,private imageCompress: NgxImageCompressService)  { }
 
   ngOnInit(): void {
@@ -42,18 +43,20 @@ export class CustomImageComponent implements OnInit {
     imgFailed () {}
     toggleCropMode() {
       this.inCropMode = !this.inCropMode;
-      if (this.inZoomMode=true) {
+      if (this.inZoomMode =true) 
         this.inZoomMode = !this.inZoomMode;
-      }
-      
-
+      if (this.inCompressMode =true) 
+        this.inCompressMode = !this.inCompressMode;
     }
-    toggleZoomMode() {
-      
+
+    toggleZoomMode() {  
       this.inZoomMode = !this.inZoomMode;
-      if (this.inCropMode=true) {
+      if (this.inCropMode =true)
         this.inCropMode = !this.inCropMode;
-      }
+        
+      if (this.inCompressMode=true) 
+        this.inCompressMode = !this.inCompressMode;
+      
       
     }
     compressFile() {
@@ -64,6 +67,17 @@ export class CustomImageComponent implements OnInit {
                   this.imgResultAfterCompression = compressedImage;
                   console.log('Size in bytes after compression is now:', this.imageCompress.byteCount(compressedImage));
               });
+
+
+      this.inCompressMode = !this.inCompressMode;
+      if (this.inZoomMode) 
+        this.inZoomMode = !this.inZoomMode;
+      if (this.inCropMode) 
+        this.inCropMode = !this.inCropMode;
+      
+
+  
+
       
   }
   }
