@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MinimaLight } from '@alyle/ui/themes/minima';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import {NgxImageCompressService} from 'ngx-image-compress';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSliderHarness} from '@angular/material/slider/testing';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import {NgxImageCompressService} from 'ngx-image-compress';
     CustomImageComponent
   ],
   imports: [
+    MatSliderModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
