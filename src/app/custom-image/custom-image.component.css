@@ -46,8 +46,23 @@
   
     
   }
- 
-  
+ .button-54{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+ }
+  .btns{
+    margin: auto;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 500px;
+  }
     
     .image img.selected {
       border-color: #007bff;

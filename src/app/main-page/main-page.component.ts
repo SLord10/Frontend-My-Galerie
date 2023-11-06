@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { Router } from '@angular/router';
-
+import { initFlowbite } from 'flowbite';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -20,17 +19,6 @@ export class ImageService {
 
   // Add more methods as needed
 }
-
-
-
-
-
-
-
-
-
-
-
 
 interface Image {
   src: string;
@@ -78,11 +66,9 @@ export class MainPageComponent {
   editImage(imageSrc: string): void {
     this.router.navigate(['/custom', { src: imageSrc }]);
   }
-
-
-
-
-
-
+  
+  ngOnInit(): void{
+    initFlowbite()
+  }
 
 }
